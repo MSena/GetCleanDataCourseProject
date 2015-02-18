@@ -36,7 +36,7 @@ A full description of the data is available at the site where it was obtained:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-##License
+##License 
 
 The use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 

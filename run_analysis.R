@@ -1,6 +1,6 @@
 ## Getting and Cleaning Data - Week 3 - Course Project
 
-run_Analysis <- function(){
+run_analysis <- function(){
       
       setwd("C:/Users/msilva/Desktop/Coursera/03_Getting_Cleaning_Data/GetCleanDataCourseProject")  
      
