@@ -62,7 +62,7 @@ All measurement features are normalized and bounded within [-1,1], and each feat
 ## Script Overview
 
 I created a computer script (in R - run_analysis.R) that takes the raw data as input and produces the tidy data I'm sharing as output (finalTable.txt). 
-I script is profusely commented, so I invite you to take a look at it. 
+The script is profusely commented, so I invite you to take a look at it. 
 
 It first sets the working environment to the folder containing the data folder ("./UCI _HAR_Dataset/). 
 It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). 
