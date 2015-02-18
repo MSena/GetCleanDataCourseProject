@@ -73,9 +73,8 @@ The question of presenting the variable means instead of frequencies was easily 
 
 Meanwhile, I realized that a ftable could be considered as a non-tidy format (lots of blanks - see secondTable.txt). 
 I would also have to go for a write.ftable instead of write.table solution, as requested (thats how I got secondTable). 
-So, I took the coding I had and put it to work in a way that gives the required output. 
+So, I took the coding I had and put it to work in a way that gives the required output. It is most probably different from the approaches I may see in the peer review (I'm looking forward to it), but it delivers.
 
-It is most probably different from the approaches I may see in the peer review (I'm looking forward to it), but it delivers.
 Converting a ftable to data.frame is not nice if you want to keep column names (I tried to do it but couldn't find a convenient way), so I'm naming the variable only after getting the data.frame of step5 (and not in a previous step, as it was supposed to if you consider the project's five steps). 
 Finally, You may see rm() all over the place: the idea is to remove from memory all data that is no longer needed.
 
