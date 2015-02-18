@@ -8,9 +8,10 @@ This is a guide to demonstrate my ability to collect, work with, and clean a dat
 
 This repository contains the following elements:
 
+* This README file;
 * A script file called run_analysis.R, containing all the steps taken to deliver a tidy data set as asked for in the Course Project;
-* a text file named finalTable.txt containing the final result of project, as produced by the R script;
-* a Codebook that describes the variables, the data, and any transformations or work taken to clean up the data.
+* A text file named finalTable.txt containing the final result of project, as produced by the R script;
+* A Codebook that describes the variables, the data, and any transformations or work taken to clean up the data.
 
 ##Overview
 
