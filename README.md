@@ -12,6 +12,7 @@ This repository contains the following elements:
 * A script file called run_analysis.R, containing all the steps taken to deliver a tidy data set as asked for in the Course Project;
 * A text file named finalTable.txt containing the final result of project, as produced by the R script;
 * A Codebook that describes the variables, the data, and any transformations or work taken to clean up the data.
+* a second txt file - secondTable.txt (see Code Book)
 
 ##Overview
 
@@ -32,7 +33,7 @@ For each record it is provided:
 
 All features are normalized and bounded within [-1,1], and each feature vector is a row on the text file.
 
-A full description of the data is available at the site where it was obtained: 
+A full description of the data is available at the following site: 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 

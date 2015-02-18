@@ -2,27 +2,27 @@
 
 This Code Book contains:
 
-* The Course Project and choices I made;
+* Information on the Course Project, and choices I made;
 * Information about the data variables (including units) in the data set provided for the Course;
-* Information about the way the data is processed with the run_analysis.R script to deliver a tidy data set as requested.
-* Instructions for use
-* Development information 
+* Information about the way the data is processed with the run_analysis.R script to deliver a tidy data set as requested;
+* Instructions for use;
+* Development information.
 
 ## The Course Project (and choices I made)
 
 The Course Project relies on the information made available in the WWW by the Smartlab laboratory at the Università degli Studi di Genova.
 * The experiments have been carried out with a group of 30 volunteers;
 * Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist;
-* Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured. 
+* Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured;
 * The experiments have been video-recorded to label the data manually. 
 
-The obtained dataset has been randomly partitioned. Two data sets are provided:
-* 70% of the volunteers was selected for generating the training data; and 
-* 30% were put aside to test data.
+The obtained dataset randomly partitioned afterwards. Two data sets are provided:
+* 70% of subjects were selected for generating the training data; and 
+* 30% of subjects were put aside to test something (not clear from the Project assignment).
 
 The features selected for this database come from accelerometer and gyroscope 3-axial raw signals.
 
-The project statement goes:
+The project assignment goes:
 "You should create one R script called run_analysis.R that does the following:
 * Merges the training and the test sets to create one data set;
 * Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -61,8 +61,15 @@ All measurement features are normalized and bounded within [-1,1], and each feat
 
 I created a computer script (in R - run_analysis.R) that takes the raw data as input and produces the tidy data I'm sharing as output (finalTable.txt). 
 I script is profusely commented, so I invite you to take a look at it. 
-It first sets the working environment to the folder containing the data folder ("./UCI _HAR_Dataset/). It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). Afterwards, it subsets the desired variables and "merges" the activities denominations (character strings). 
-The last part of the script may look kind of weird, as I initially was looking to put forward a ftable (I'm a Excel's pivot table fan). The question of presenting the variable means instead of frequencies was easily overcome (with acast()). Meanwhile, I realized that a ftable could be considered as a non-tidy format (lots of blanks). I would also have to go for a write.ftable instead of write.table solution, as requested. So, I took the coding I had and put it to work in a way that gives the required output. It is most probably different from the approaches I may see in the peer review (I'm looking forward to it), but it delivers.
+It first sets the working environment to the folder containing the data folder ("./UCI _HAR_Dataset/). 
+It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). 
+Afterwards, it subsets the desired variables and "merges" the activities denominations (character strings). 
+The last part of the script may look kind of weird, as I initially was looking to put forward a ftable (I'm a Excel's pivot table fan). 
+The question of presenting the variable means instead of frequencies was easily overcome (with acast()). 
+Meanwhile, I realized that a ftable could be considered as a non-tidy format (lots of blanks - see secondTable.txt). 
+I would also have to go for a write.ftable instead of write.table solution, as requested (thats how I got secondTable). 
+So, I took the coding I had and put it to work in a way that gives the required output. 
+It is most probably different from the approaches I may see in the peer review (I'm looking forward to it), but it delivers.
 Converting a ftable to data.frame is not nice if you want to keep column names (I tried to do it but couldn't find a convenient way), so I'm naming the variable only after getting the data.frame of step5 (and not in a previous step, as it was supposed to if you consider the project's five steps). 
 Finally, You may see rm() all over the place: the idea is to remove from memory all data that is no longer needed.
 
