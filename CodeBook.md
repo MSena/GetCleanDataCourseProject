@@ -37,6 +37,8 @@ Based on the second point of the above, my understanding is that one should cons
 
 So, the task at hands involves writing a script that merges both test and train data to get, for each subject~activity pair measured, the mean and std of a set of variables that I consider to be the ones related to the raw data(as opposed to look for all variables thaT have mean or std in their name). This option paves the way or a "neatier" codebook, at least : )
 
+Please note that the number of columns is not subject of marking. It's not wrong to have 6, or 166 columns. It depends only on your judgement. Please refer to the discussion forum for more on this subject (see David Hood comment on https://class.coursera.org/getdata-011/forum/thread?thread_id=252).
+
 ##The Data Variables 
 
 The data variables considered in the exercise are then:
