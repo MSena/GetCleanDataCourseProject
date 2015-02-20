@@ -54,7 +54,7 @@ The data variables considered in the exercise are then:
 * tBodyGyro-std()-Y   :   Std of Angular velocity on y-Axis;
 * tBodyGyro-std()-Z   :   Std of Angular velocity on z-Axis. 
 
-So, for each subject ~ activity pair (30 subjects * 6 activities = 180 rows), the final dataset (finalTable.txt) delivers the mean of all observations of the above variables.
+So,the final dataset (finalTable.txt) delivers the mean of all observations of the above variables, for each subject ~ activity pair (30 subjects * 6 activities = 180 rows).
 All measurement features are normalized and bounded within [-1,1].
 
 

@@ -3,6 +3,8 @@
 
 This repository presents the material and tasks developed for the Getting and Cleaning Data Project, part of the Data Science Specialization of the John Hopkins University, delivered through Coursera.
 This is a guide to demonstrate my ability to collect, work with, and clean a data set.
+
+Summary
 * Repo materials
 * Project Overview
 * Information about the way the data is processed with the run_analysis.R script to deliver a tidy data set as requested;
@@ -52,7 +54,7 @@ It first sets the working environment to the folder containing the data folder (
 It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). 
 Afterwards, it subsets the desired variables and "merges" the activities denominations (character strings).
 
-The last part of the script computes the mean value for each variable considered, grouped by and all subject ~ activity pairs.
+The last part of the script computes the mean value for each variable considered, grouped by subject ~ activity pairs.
 This part of the script may look kind of weird, as I initially was looking to put forward a ftable (I'm a Excel's pivot table fan). 
 The question of presenting the variable means instead of frequencies was easily overcome (with acast()). 
 
