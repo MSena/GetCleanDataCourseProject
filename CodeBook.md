@@ -4,9 +4,6 @@ This Code Book contains:
 
 * Information on the Course Project, and choices I made;
 * Information about the data variables (including units) in the data set provided for the Course;
-* Information about the way the data is processed with the run_analysis.R script to deliver a tidy data set as requested;
-* Instructions for use;
-* Development information.
 
 ## The Course Project (and choices I made)
 
@@ -30,7 +27,7 @@ The project assignment goes:
 * Appropriately labels the data set with descriptive variable names. 
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject."
 
-Based on the second point of the above, my understanding is that one should consider only, from a set of over 500 features, those that actually relate to raw physical measurements:
+Based on the second point of the above, my understanding is that one should consider only, from a set of over 500 features, those that actually relate to "raw" physical measurements:
 * tBodyAcc-XYZ
 * tBodyGyro-XYZ
 ('-XYZ' is used to denote 3-axial signals in the X, Y and Z directions).
@@ -57,40 +54,10 @@ The data variables considered in the exercise are then:
 * tBodyGyro-std()-Y   :   Std of Angular velocity on y-Axis;
 * tBodyGyro-std()-Z   :   Std of Angular velocity on z-Axis. 
 
-All measurement features are normalized and bounded within [-1,1], and each feature vector is a row on the text file.
-
-## Script Overview
-
-I created a computer script (in R - run_analysis.R) that takes the raw data as input and produces the tidy data I'm sharing as output (finalTable.txt). 
-The script is profusely commented, so I invite you to take a look at it. 
-
-It first sets the working environment to the folder containing the data folder ("./UCI _HAR_Dataset/). 
-It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). 
-Afterwards, it subsets the desired variables and "merges" the activities denominations (character strings). 
-
-The last part of the script may look kind of weird, as I initially was looking to put forward a ftable (I'm a Excel's pivot table fan). 
-The question of presenting the variable means instead of frequencies was easily overcome (with acast()). 
-
-Meanwhile, I realized that a ftable could be considered as a non-tidy format (lots of blanks - see secondTable.txt). 
-I would also have to go for a write.ftable instead of write.table solution, as requested (thats how I got secondTable). 
-So, I took the coding I had and put it to work in a way that gives the required output. It is most probably different from the approaches I may see in the peer review (I'm looking forward to it), but it delivers.
-
-Converting a ftable to data.frame is not nice if you want to keep column names (I tried to do it but couldn't find a convenient way), so I'm naming the variable only after getting the data.frame of step5 (and not in a previous step, as it was supposed to if you consider the project's five steps). 
-Finally, You may see rm() all over the place: the idea is to remove from memory all data that is no longer needed.
+So, for each subject ~ activity pair (30 subjects * 6 activities = 180 rows), the final dataset (finalTable.txt) delivers the mean of all observations of the above variables.
+All measurement features are normalized and bounded within [-1,1].
 
 
-### Instructions:
-
-1. Source run_analysis.R
-2. type run_analysis() in the console
-
-In the end you get the requested txt file, the table returned in the Console (for RStudio), and a farewell message. Nothing is kept on memory.
-
-###Development Info
-
-This project was developed in Rstudio  
-Platform: x86_64-w64-mingw32/x64 (64-bit) - running on Windows7 Professional
-R version: 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
 
 
 
