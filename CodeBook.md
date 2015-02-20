@@ -27,32 +27,83 @@ The project assignment goes:
 * Appropriately labels the data set with descriptive variable names. 
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject."
 
-Based on the second point of the above, my understanding is that one should consider only, from a set of over 500 features, those that actually relate to "raw" physical measurements:
-* tBodyAcc-XYZ
-* tBodyGyro-XYZ
-('-XYZ' is used to denote 3-axial signals in the X, Y and Z directions).
+Based on the second point of the above, my understanding is that one should consider only, from a set of over 560 features, those that actually have mean() or std() in its name (avoiding meanFreq()):
 
-So, the task at hands involves writing a script that merges both test and train data to get, for each subject~activity pair measured, the mean and std of a set of variables that I consider to be the ones related to the raw data(as opposed to look for all variables that have mean or std in their name). This option paves the way for a "neatier" codebook, at least : )
+So, the task at hands involves writing a script that merges both test and train data to get, for each subject~activity pair measured, the mean of a set of variables that contain mean() or std() in its name.
 
 Please note that the number of columns is not subject of marking. It's not wrong to have 6, or 166 columns. It depends only on your judgement. Please refer to the discussion forum for more on this subject (see David Hood comment on https://class.coursera.org/getdata-011/forum/thread?thread_id=252).
 
 ##The Data Variables 
 
 The data variables considered in the exercise are then:
-* subject (factor): [1:30] aka id of volunteer;
-* activity (factor): the six activities for which measurements were taken (see above);
-* tBodyAcc-mean()-X   :   mean of body acceleration on the x-Axis;
-* tBodyAcc-mean()-Y   :   mean of body acceleration on the y-Axis;
-* tBodyAcc-mean()-Z   :   mean of body acceleration on the z-Axis;
-* tBodyAcc-std()-X    :   Std of body acceleration on the x-Axis;
-* tBodyAcc-std()-Y    :   Std of body acceleration on the y-Axis;
-* tBodyAcc-std()-Z    :   Std of body acceleration on the z-Axis;
-* tBodyGyro-mean()-X  :   mean of Angular velocity on x-Axis;
-* tBodyGyro-mean()-Y  :   mean of Angular velocity on y-Axis;
-* tBodyGyro-mean()-Z  :   mean of Angular velocity on z-Axis;
-* tBodyGyro-std()-X   :   Std of Angular velocity on x-Axis;
-* tBodyGyro-std()-Y   :   Std of Angular velocity on y-Axis;
-* tBodyGyro-std()-Z   :   Std of Angular velocity on z-Axis. 
+*  subject (factor): [1:30] aka id of volunteer;
+*  activity (factor): the six activities for which measurements were taken (see above);
+*  tBodyAcc-mean()-X
+*  tBodyAcc-mean()-Y
+*  tBodyAcc-mean()-Z
+*  tBodyAcc-std()-X
+*  tBodyAcc-std()-Y
+*  tBodyAcc-std()-Z
+*  tGravityAcc-mean()-X
+*  tGravityAcc-mean()-Y
+*  tGravityAcc-mean()-Z
+*  tGravityAcc-std()-X
+*  tGravityAcc-std()-Y
+*  tGravityAcc-std()-Z
+*  tBodyAccJerk-mean()-X
+*  tBodyAccJerk-mean()-Y
+*  tBodyAccJerk-mean()-Z
+*  tBodyAccJerk-std()-X
+*  tBodyAccJerk-std()-Y
+*  tBodyAccJerk-std()-Z
+*  tBodyGyro-mean()-X
+*  tBodyGyro-mean()-Y
+*  tBodyGyro-mean()-Z
+*  tBodyGyro-std()-X
+*  tBodyGyro-std()-Y
+*  tBodyGyro-std()-Z
+*  tBodyGyroJerk-mean()-X
+*  tBodyGyroJerk-mean()-Y
+*  tBodyGyroJerk-mean()-Z
+*  tBodyGyroJerk-std()-X
+*  tBodyGyroJerk-std()-Y
+*  tBodyGyroJerk-std()-Z
+*  tBodyAccMag-mean()
+*  tBodyAccMag-std()
+*  tGravityAccMag-mean()
+*  tGravityAccMag-std()
+*  tBodyAccJerkMag-mean()
+*  tBodyAccJerkMag-std()
+*  tBodyGyroMag-mean()
+*  tBodyGyroMag-std()
+*  tBodyGyroJerkMag-mean()
+*  tBodyGyroJerkMag-std()
+*  fBodyAcc-mean()-X
+*  fBodyAcc-mean()-Y
+*  fBodyAcc-mean()-Z
+*  fBodyAcc-std()-X
+*  fBodyAcc-std()-Y
+*  fBodyAcc-std()-Z
+*  fBodyAccJerk-mean()-X
+*  fBodyAccJerk-mean()-Y
+*  fBodyAccJerk-mean()-Z
+*  fBodyAccJerk-std()-X
+*  fBodyAccJerk-std()-Y
+*  fBodyAccJerk-std()-Z
+*  fBodyGyro-mean()-X
+*  fBodyGyro-mean()-Y
+*  fBodyGyro-mean()-Z
+*  fBodyGyro-std()-X
+*  fBodyGyro-std()-Y
+*  fBodyGyro-std()-Z
+*  fBodyAccMag-mean()
+*  fBodyAccMag-std()
+*  fBodyBodyAccJerkMag-mean()
+*  fBodyBodyAccJerkMag-std()
+*  fBodyBodyGyroMag-mean()
+*  fBodyBodyGyroMag-std()
+*  fBodyBodyGyroJerkMag-mean()
+*  fBodyBodyGyroJerkMag-std()
 
 So,the final dataset (finalTable.txt) delivers the mean of all observations of the above variables, for each subject ~ activity pair (30 subjects * 6 activities = 180 rows).
 All measurement features are normalized and bounded within [-1,1].

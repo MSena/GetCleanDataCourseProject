@@ -64,13 +64,14 @@ So, I took the coding I had and put it to work in a way that gives the required 
 
 Converting a ftable to data.frame is not nice if you want to keep column names (I tried to do it but couldn't find a convenient way), so I'm naming the variable only after getting the data.frame of step5 (and not in a previous step, as it was supposed to if you consider the project's five steps). 
 Finally, You may see rm() all over the place: the idea is to remove from memory all data that is no longer needed.
+This script is far from optimized, but it delivers...
 
 ### Instructions:
 
 1. Source run_analysis.R
 2. type run_analysis() in the console
 
-In the end you get the requested txt file, the table returned in the Console (for RStudio), and a farewell message. Nothing is kept on memory.
+In the end you get the requested txt file, the table returned in the Console (for RStudio), and a farewell message. Nothing is kept on memory, apart from the function itself.
 
 ###Development Info
 
