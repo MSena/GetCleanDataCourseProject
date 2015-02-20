@@ -33,7 +33,7 @@ So, the task at hands involves writing a script that merges both test and train 
 
 Please note that the number of columns is not subject of marking. It's not wrong to have 6, or 166 columns. It depends only on your judgement. Please refer to the discussion forum for more on this subject (see David Hood comment on https://class.coursera.org/getdata-011/forum/thread?thread_id=252).
 
-##The Data Variables 
+##The Data Variables (68 Columns)
 
 The data variables considered in the exercise are then:
 *  subject (factor): [1:30] aka id of volunteer;
