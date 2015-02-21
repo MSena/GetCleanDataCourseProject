@@ -48,7 +48,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 ## Script Overview
 
 I created a computer script (in R - run_analysis.R) that takes the raw data as input and produces the tidy data I'm sharing as output (finalTable.txt). 
-The script is profusely commented, so I invite you to take a look at it. 
+The script is commented. 
 
 It first sets the working environment to the folder containing the data folder ("./UCI _HAR_Dataset/). 
 It then reads the data from several txt files provided and merges them into one single data.frame (fullData), linking subjects to activities to measurements data, regardless of the previous partition (test/train). 
@@ -59,12 +59,10 @@ This part of the script may look kind of weird, as I initially was looking to pu
 The question of presenting the variable means instead of frequencies was easily overcome (with acast()). 
 
 Meanwhile, I realized that a ftable could be considered as a non-tidy format (lots of blanks - see secondTable.txt). 
-I would also have to go for a write.ftable instead of write.table solution, as requested (thats how I got secondTable). 
-So, I took the coding I already had and put it to work in a way that gives the required output. It is most probably different from the approaches I may see in the peer review (I'm looking forward to it).
+So, I took the coding I already had and put it to work in a way that gives the required output. 
 
-Converting a ftable to data.frame is not nice if you want to keep column names (I tried to do it but couldn't find a convenient way), so I'm naming the variable only after getting the data.frame of step5 (and not in a previous step, as it was supposed to if you consider the project's five steps). 
-Finally, You may see rm() all over the place: the idea is to remove from memory all data that is no longer needed.
-This script is far from optimized, but it delivers...
+I'm naming the variable only after getting the data.frame of step5. 
+Finally, You may see rm() all over: the idea is to remove from memory all data that is no longer needed.
 
 ### Instructions:
 
